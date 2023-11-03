@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  h1= title
+  - var results =[{name:"Smartphone", type:"mobile device", price:300000},{name:"Laptop", type:"Personal Computer", price:500000},{name:"Smartwatch", type:"wearable device", price:2000000}]
+  div(class="container-fluid")
+  div(class="row")
+   each v,index  in results 
+    div(class="col-sm-2" onclick =`buy(${index})`) #{v.name}, #{v.type}, #{v.price}
+     script.
+        function buy(a)
+        {
+            alert(`You purchased Item ${a+1}`)
+        }
+
+        
