@@ -25,6 +25,7 @@ var usersRouter = require('./routes/users');
 var GadgetsRouter = require('./routes/Gadgets');
 var boardRouter = require('./routes/board');
 var chooseRouter = require('./routes/choose');
+var resourceRouter = require('./routes/resource');
 
 
 
@@ -47,6 +48,7 @@ app.use('/users', usersRouter);
 app.use('/Gadgets', GadgetsRouter);
 app.use('/board', boardRouter);
 app.use('/choose', chooseRouter);
+app.use('/resource', resourceRouter);
 
 
 
