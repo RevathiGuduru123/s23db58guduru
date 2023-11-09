@@ -19,10 +19,10 @@ db.once("open", function(){
 console.log("Connection to DB succeeded")});
 
 
-var Gadgets = require("./models/GadgetsSchema");
+var Gadget = require("./models/GadgetSchema");
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var GadgetsRouter = require('./routes/Gadgets');
+var GadgetRouter = require('./routes/Gadget');
 var boardRouter = require('./routes/board');
 var chooseRouter = require('./routes/choose');
 var resourceRouter = require('./routes/resource');
@@ -45,7 +45,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/Gadgets', GadgetsRouter);
+app.use('/Gadget', GadgetRouter);
 app.use('/board', boardRouter);
 app.use('/choose', chooseRouter);
 app.use('/resource', resourceRouter);
@@ -56,9 +56,9 @@ app.use('/resource', resourceRouter);
 
 async function recreateDB(){
 // Delete everything
-await Gadgets.deleteMany();
+await Gadget.deleteMany();
 let instance1 = new
-Gadgets({name:"Smartphone", type:'mobile device',
+Gadget({name:"Smartphone", type:'mobile device',
 price:300000});
 instance1.save().then(doc=>{
 console.log("First object saved")}
@@ -68,7 +68,7 @@ console.error(err)
 
 
 let instance2 = new
-Gadgets({name:"Laptop", type:'Personal Computer',
+Gadget({name:"Laptop", type:'Personal Computer',
 price:500000});
 instance2.save().then(doc=>{
 console.log("Second object saved")}
@@ -80,7 +80,7 @@ console.error(err)
 
 
 let instance3 = new
-Gadgets({name:"Smartwatch", type:'wearable device',
+Gadget({name:"Smartwatch", type:'wearable device',
 price:300000});
 instance3.save().then(doc=>{
 console.log("Third object saved")}

@@ -2,20 +2,20 @@ var express = require('express');
 var router = express.Router();
 // Require controller modules.
 var api_controller = require('../controllers/api');
-var Gadgets_controller = require('../controllers/Gadgets');
+var Gadget_controller = require('../controllers/Gadget');
 /// API ROUTE ///
 // GET resources base.
 router.get('/', api_controller.api);
 /// COSTUME ROUTES ///
 // POST request for creating a Gadgets.
-router.post('/Gadgets', Gadgets_controller.Gadgets_create_post);
+router.post('/Gadget', Gadget_controller.Gadget_create_post);
 // DELETE request to delete Gadgets.
-router.delete('/Gadgets/:id', Gadgets_controller.Gadgets_delete);
+router.delete('/Gadget/:id', Gadget_controller.Gadget_delete);
 // PUT request to update Gadgets.
-router.put('/Gadgets/:id', Gadgets_controller.Gadgets_update_put);
+router.put('/Gadget/:id', Gadget_controller.Gadget_update_put);
 // GET request for one Gadgets.
-router.get('/Gadgets/:id', Gadgets_controller.Gadgets_detail);
+router.get('/Gadget/:id', Gadget_controller.Gadget_detail);
 // GET request for list of all Gadgets items.
-router.get('/Gadgets', Gadgets_controller.Gadgets_list);
+router.get('/Gadget', Gadget_controller.Gadget_list);
 module.exports = router;
 
