@@ -47,8 +47,8 @@ exports.Gadget_delete = function(req, res) {
 res.send('NOT IMPLEMENTED: Gadget delete DELETE ' + req.params.id);
 };
 //Handle Gadget update form on PUT.
-exports.vehicles_update_put = function(req, res) {
-    res.send('NOT IMPLEMENTED: vehicles update PUT' + req.params.id);
+exports.Gadget_update_put = function(req, res) {
+    res.send('NOT IMPLEMENTED: Gadget update PUT' + req.params.id);
     };
  
 // VIEWS
