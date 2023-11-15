@@ -66,3 +66,21 @@ exports.fruit_view_all_Page = async function(req, res) {
     }
 }
 
+exports.Gadget_update_put = async function(req, res) {
+    console.log(`update on id ${req.params.id} with body
+    ${JSON.stringify(req.body)}`)
+    try {
+    let toUpdate = await Gadget.findById( req.params.id)
+    // Do updates of properties
+    if(req.body.name) toUpdate.name = req.body.name;
+    if(req.body.type) toUpdate.type = req.body.type;
+    if(req.body.price) toUpdate.price = req.body.price;
+    let result = await toUpdate.save();
+    console.log("Sucess " + result)
+    res.send(result)
+    } catch (err) {
+    res.status(500)
+    res.send(`{"error": ${err}: Update for id ${req.params.id}
+    failed`);
+    }
+    };
