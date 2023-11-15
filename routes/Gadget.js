@@ -1,9 +1,10 @@
 var express = require('express');
+const Gadget_controlers= require('../controllers/Gadget');
 var router = express.Router();
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('Gadget', { title: 'Search Results Gadget' });
-});
+router.get('/detail', Gadget_controlers.Gadget_view_one_Page);
 
 module.exports = router;
+
+/* GET detail costume page */
