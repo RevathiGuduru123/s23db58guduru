@@ -43,9 +43,18 @@ exports.Gadget_create_post = async function(req, res) {
     } ;
 };
 // Handle Gadget delete form on DELETE.
-exports.Gadget_delete = function(req, res) {
-res.send('NOT IMPLEMENTED: Gadget delete DELETE ' + req.params.id);
-};
+exports.Gadget_delete = async function(req, res) {
+    console.log("delete " + req.params.id)
+    try {
+    result = await Gadget.findByIdAndDelete( req.params.id)
+    console.log("Removed " + result)
+    res.send(result)
+    } catch (err) {
+    res.status(500)
+    res.send(`{"error": Error deleting ${err}}`);
+    }
+    };
+    
 //Handle Gadget update form on PUT.
 exports.Gadget_update_put = function(req, res) {
     res.send('NOT IMPLEMENTED: Gadget update PUT' + req.params.id);
