@@ -2,6 +2,9 @@ var express = require('express');
 const Gadget_controlers= require('../controllers/Gadget');
 var router = express.Router();
 
+/* GET Gadgets */
+router.get('/', Gadget_controlers.Gadget_view_all_Page);
+
 /* GET home page. */
 router.get('/detail', Gadget_controlers.Gadget_view_one_Page);
 

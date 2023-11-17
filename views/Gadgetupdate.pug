@@ -3,6 +3,7 @@ extends layout
 block content
   h1= title
 
+
   if (toShow == null)
     h2 No instance to update details
   else
@@ -10,6 +11,7 @@ block content
     - let name = toShow.name
     - let type = toShow.type
     - let price = toShow.price
+
 
     div.row(class='mb-2')
       div.mr-1 ID is
@@ -56,3 +58,4 @@ block content
             alert("Save failed: " + error.message);
           }
         });
+

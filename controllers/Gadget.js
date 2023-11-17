@@ -117,18 +117,16 @@ exports.Gadget_update_put = function(req, res) {
  
 // VIEWS
 // Handle a show all view
-exports.fruit_view_all_Page = async function(req, res) {
+exports.Gadget_view_all_Page = async function(req, res) {
     try{
-    console.log("IN")
-    theGadgets = await Gadget.find();
-    console.log(thefruits)
-    res.render('fruits', { title: 'Search Results - Gadgets', results: theGadgets });
-    }
-    catch(err){
-    //res.status(500);
-    res.send(`{"error": ${err}}`);
-    }
-}
+        theGadget = await Gadget.find();
+        res.render('Gadget', { title: 'Gadget Search Results', results: theGadget });
+        }
+        catch(err){
+        res.status(500);
+        res.send(`{"error": ${err}}`);
+        }
+    };
 
 exports.Gadget_update_put = async function(req, res) {
     console.log(`update on id ${req.params.id} with body
